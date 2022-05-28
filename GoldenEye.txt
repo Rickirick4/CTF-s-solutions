@@ -360,7 +360,7 @@ If you captured this make sure to go here.....
 
 |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 
-lets check out web site ->http://10.0.2.23//006-final/xvf7-flag/
+lets check out web site ->http://10.X.X.X//006-final/xvf7-flag/
 
 
 finally done... :)
