@@ -429,7 +429,7 @@ chmod 777 shell.sh
 
 uNG9O58gUE7snukf3bvZ0rxhtnjzSGzG
 
-ssh bandit24@bandit.labs.overthewire.org -p 2220
+ssh bandit25@bandit.labs.overthewire.org -p 2220
 
-bandit24 password -> uNG9O58gUE7snukf3bvZ0rxhtnjzSGzG
+bandit25 password -> uNG9O58gUE7snukf3bvZ0rxhtnjzSGzG
 
