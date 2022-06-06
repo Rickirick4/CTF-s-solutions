@@ -433,3 +433,45 @@ ssh bandit25@bandit.labs.overthewire.org -p 2220
 
 bandit25 password -> uNG9O58gUE7snukf3bvZ0rxhtnjzSGzG
 
+
+ssh -i bandit26.sshkey bandit26@localhost
+
+cat etc/passwd  -> /home/bandit26:/usr/bin/showtext
+
+cat /usr/bin/showtext
+
+#!/bin/sh
+
+export TERM=linux
+
+more ~/text.txt
+exit 0
+
+
+As you can see machine use more command we have to corrupt when more command running but first run this command (ssh -i bandit26.sshkey bandit26@localhost) you should minimize your terminal to run automaticly command (more)
+when you see More command do not press enter, press (v) and you can see vim file. Now you have to insert some command in the vim file if you
+dont know how to use vim this will very hard for you but don't worry i ll show you
+when open the vim file you shoul first press (Escape) button after that write this command (:set shell=/bin/bash) and press enter after that
+press Escape button after write tihs command (:shell) and press enter so if you did correctly you ll see bandit26@bandit shell 
+
+cat /etc/bandit_pass/bandit26
+5czgV9L3Xx8JPOyRbXh6lQbmIOWvPT6Z
+
+bandit26 password -> 5czgV9L3Xx8JPOyRbXh6lQbmIOWvPT6Z
+
+ls
+
+file bandit27-do
+
+./bandit27-do id
+
+./bandit27-do cat /etc/bandit_pass/bandit27
+3ba3118a22e93127a4ed485be72ef5ea
+
+exit
+press Escape button and write this command to exit the vim (:q!) and press enter
+
+
+ssh bandit27@bandit.labs.overthewire.org -p 2220
+
+bandit27 password -> 3ba3118a22e93127a4ed485be72ef5ea
