@@ -475,3 +475,229 @@ press Escape button and write this command to exit the vim (:q!) and press enter
 ssh bandit27@bandit.labs.overthewire.org -p 2220
 
 bandit27 password -> 3ba3118a22e93127a4ed485be72ef5ea
+
+mkdir /tmp/rick27
+
+cd /tmp/rick27
+
+git clone ssh://bandit27-git@localhost/home/bandit27-git/repo
+3ba3118a22e93127a4ed485be72ef5ea
+
+ls
+cd repo
+cat README
+
+0ef186ac70e04ea33b4c1853d2526fa2
+
+
+ssh bandit28@bandit.labs.overthewire.org -p 2220
+
+bandit28 password -> 0ef186ac70e04ea33b4c1853d2526fa2
+
+mkdir /tmp/rick28
+cd /tmp/rick28
+
+git clone ssh://bandit28-git@localhost/home/bandit28-git/repo
+0ef186ac70e04ea33b4c1853d2526fa2
+
+ls
+cd repo
+ls
+
+file README.md
+README.md: ASCII text
+cat README.md
+
+# Bandit Notes
+Some notes for level29 of bandit.
+
+## credentials
+
+- username: bandit29
+- password: xxxxxxxxxx
+
+
+git branch
+
+git log
+
+
+commit edd935d60906b33f0619605abd1689808ccdd5ee
+Author: Morla Porla <morla@overthewire.org>
+Date:   Thu May 7 20:14:49 2020 +0200
+
+    fix info leak
+
+commit c086d11a00c0648d095d04c089786efef5e01264
+Author: Morla Porla <morla@overthewire.org>
+Date:   Thu May 7 20:14:49 2020 +0200
+
+    add missing data
+
+commit de2ebe2d5fd1598cd547f4d56247e053be3fdc38
+Author: Ben Dover <noone@overthewire.org>
+Date:   Thu May 7 20:14:49 2020 +0200
+
+    initial commit of README.md
+
+
+
+git checkout c086d11a00c0648d095d04c089786efef5e01264
+
+ls
+cat README.md
+
+
+# Bandit Notes
+Some notes for level29 of bandit.
+
+## credentials
+
+- username: bandit29
+- password: bbc96594b4e001778eee9975372716b2
+
+
+
+ssh bandit29@bandit.labs.overthewire.org -p 2220
+bandit29 password -> bbc96594b4e001778eee9975372716b2
+
+mkdir /tmp/rick29
+cd /tmp/rick29
+
+git clone ssh://bandit29-git@localhost/home/bandit29-git/repo
+
+ls
+cd repo
+cat README.md
+
+
+# Bandit Notes
+Some notes for bandit30 of bandit.
+
+## credentials
+
+- username: bandit30
+- password: <no passwords in production!>
+
+
+git branch -r
+
+git checkout dev
+cat README.md
+
+
+# Bandit Notes
+Some notes for bandit30 of bandit.
+
+## credentials
+
+- username: bandit30
+- password: 5b90576bedb2cc04c86a9e924ce42faf
+
+
+git clone ssh://bandit30-git@localhost/home/bandit29-git/repo
+bandit30 password -> 5b90576bedb2cc04c86a9e924ce42faf
+
+mkdir /tmp/rick30
+cd /tmp/rick30
+
+git clone ssh://bandit30-git@localhost/home/bandit30-git/repo
+
+ls
+cd repo
+ls
+cat README.md
+
+git tag
+git show secret
+
+47e603bb428404d265f59c42920d81e5
+
+
+ssh bandit31@bandit.labs.overthewire.org -p 2220
+bandit31 password -> 47e603bb428404d265f59c42920d81e5
+
+mkdir /tmp/rick31
+cd /tmp/rick31
+
+git clone ssh://bandit31-git@localhost/home/bandit31-git/repo
+
+ls
+cd repo
+ls
+cat README.md
+
+ls -la
+cat .gitignore
+and you ll see this -> *.txt
+
+rm .gitignore
+
+echo "May I come in?" > key.txt
+
+ls
+cat key.txt
+
+git add key.txt
+git commit -m "bandit31 commit"
+git push
+
+
+bandit32 password -> 56a9bf19c63d650ce78e6ec0354ee45e
+
+
+ssh bandit32@bandit.labs.overthewire.org -p 2220
+bandit32 password -> 56a9bf19c63d650ce78e6ec0354ee45e
+
+$0
+ls
+export SHELL=/bin/bash
+$SHELL
+
+cat /etc/bandit_pass/bandit33
+c9c3199ddf4121b10cf581a98d51caee
+
+
+ssh bandit33@bandit.labs.overthewire.org -p 2220
+bandit33 password -> c9c3199ddf4121b10cf581a98d51caee
+
+
+
+
+------------------------------------------------------------
+					Passwords
+bandit -> bandit0
+bandit1 -> boJ9jbbUNNfktd78OOpsqOltutMc3MY1
+bandit2 -> CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9
+bandit3 -> UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK
+bandit4 -> pIwrPrtPN36QITSp3EQaw936yaFoFgAB
+bandit5 -> koReBOKuIDDepwhWk7jZC0RTdopnAYKh
+bandit6 -> DXjZPULLxYr17uwoI01bNLQbtFemEgo7
+bandit7 -> HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs
+bandit8 -> cvX2JJa4CFALtqS87jk27qwqGhBM9plV
+bandit9 -> UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR
+bandit10 -> truKLdjsbJ5g7yyJ2X2R0o3a5HQJFuLk
+bandit11 -> IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR
+bandit12 -> 5Te8Y4drgCRfCx8ugdwuEX8KFC6k2EUu
+bandit13 -> 8ZjyCRiBWFYkneahHwxCv3wb2a1ORpYL
+bandit14 -> 4wcYUJFw0k0XLShlDzztnTBHiqxU3b3e
+bandit15 -> BfMYroe26WYalil77FoDi9qh59eK5xNr
+bandit16 -> cluFn7wTiGryunymYOu4RcffSxQluehd
+bandit17 -> xLYVMN9WE5zQ5vHacb0sZEVqbrp7nBTn
+bandit18 -> kfBf3eYk5BPBRzwjqutbbfE887SVc5Yd
+bandit19 -> IueksS7Ubh8G3DCwVzrTd8rAVOwq3M5x
+bandit20 -> GbKksEFF4yrVs6il55v6gwY5aVje5f0j
+bandit21 -> gE269g2h3mw3pwgrj0Ha9Uoqen1c9DGr
+bandit22 -> Yk7owGAcWjwMVRwrTesJEwB7WVOiILLI
+bandit23 -> jc1udXuA1tiHqjIsL8yaapX5XIAI6i0n
+bandit24 -> UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ
+bandit25 -> uNG9O58gUE7snukf3bvZ0rxhtnjzSGzG
+bandit26 -> 5czgV9L3Xx8JPOyRbXh6lQbmIOWvPT6Z
+bandit27 -> 3ba3118a22e93127a4ed485be72ef5ea
+bandit28 -> 0ef186ac70e04ea33b4c1853d2526fa2
+bandit29 -> bbc96594b4e001778eee9975372716b2
+bandit30 -> 5b90576bedb2cc04c86a9e924ce42faf
+bandit31 -> 47e603bb428404d265f59c42920d81e5
+bandit32 -> 56a9bf19c63d650ce78e6ec0354ee45e
+bandit33 -> c9c3199ddf4121b10cf581a98d51caee
+
